@@ -1,0 +1,12 @@
+<h1  class="p-3">Add a new Flat: </h1>
+
+<div class="p-3">
+<%= simple_form_for @flat do |f| %>
+  <%= f.input :name  %>
+  <%= f.input :description, label: "Add your description" %>
+  <%= f.input :address %>
+  <%= f.input :number_of_guests %>
+  <%= f.input :price_per_night  %>
+  <%= f.submit "Submit your flat", class: "btn btn-primary d-block" %>
+<% end %>
+</div>

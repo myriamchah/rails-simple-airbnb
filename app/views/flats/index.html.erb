@@ -1,0 +1,29 @@
+
+  <div class="container p-3">
+    <h1>All our Flats</h1>
+    <div class="row">
+        <% @flats.each do |flat| %>
+         <div class="col-4">
+          <div class="card">
+            <%= image_tag 'https://source.unsplash.com/300x200/?house' %>
+            <div class="p-3">
+            <h3><%= flat.name %></h3>
+            <p><%= flat.description %></p>
+
+            <p> <i class="fas fa-user-friends"></i> <%= flat.number_of_guests %></p>
+            <p><i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></p>
+
+            <div class="border-top">
+              <%= link_to "More info", flat_path(flat.id), class: "text-primary" %>
+              <br>
+              <%= link_to "Edit", edit_flat_path(flat.id), class: "text-warning" %>
+              <br>
+              <%= link_to "Remove", flat_path(flat.id), method: :delete, class: "text-danger" %>
+              </div>
+            </div>
+          </div>
+          </div>
+        <% end %>
+    </div>
+    <%= link_to "Add your flat!", new_flat_path, class: "btn btn-primary d-block mt-5" %>
+</div>
